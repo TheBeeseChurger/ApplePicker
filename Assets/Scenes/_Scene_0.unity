@@ -299,28 +299,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1848347813 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5051134027784726797, guid: 8f0034f363d5fc643a9dea629909574f, type: 3}
-  m_PrefabInstance: {fileID: 5051134027010188712}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1848347814
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1848347813}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4495ed53d5d6dc84885eaf7f739f718f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  applePrefab: {fileID: 0}
-  speed: 1
-  leftAndRightEdge: 10
-  changeDirChange: 0.1
-  appleDropDelay: 1
 --- !u!1001 &5051134027010188712
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -328,9 +306,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5051134026713500307, guid: 8f0034f363d5fc643a9dea629909574f, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5051134027362026007, guid: 8f0034f363d5fc643a9dea629909574f, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5051134027784726797, guid: 8f0034f363d5fc643a9dea629909574f, type: 3}
       propertyPath: m_Name
       value: AppleTree
+      objectReference: {fileID: 0}
+    - target: {fileID: 5051134027784726797, guid: 8f0034f363d5fc643a9dea629909574f, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5051134027784726798, guid: 8f0034f363d5fc643a9dea629909574f, type: 3}
       propertyPath: m_RootOrder
@@ -342,7 +332,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5051134027784726798, guid: 8f0034f363d5fc643a9dea629909574f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5051134027784726798, guid: 8f0034f363d5fc643a9dea629909574f, type: 3}
       propertyPath: m_LocalPosition.z
