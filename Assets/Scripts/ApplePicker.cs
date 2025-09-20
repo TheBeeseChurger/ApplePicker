@@ -7,6 +7,9 @@ public class ApplePicker : MonoBehaviour
 {
     [Header("Inscribed")]
     public GameObject basketPrefab;
+
+    public AppleTree appleTree;
+    public GameUI gameUI;
     public int numBaskets = 3;
     public float basketBottomY = -14f;
     public float basketSpacingY = 2f;
@@ -33,10 +36,18 @@ public class ApplePicker : MonoBehaviour
         }
 
         int basketIndex = basketList.Count - 1;
-        GameObject basketGO = basketList[basketIndex];
-        basketList.RemoveAt(basketIndex);
-        Destroy(basketGO);
+        if (basketIndex >= 0)
+        {
+            GameObject basketGO = basketList[basketIndex];
+            basketList.RemoveAt(basketIndex);
+            Destroy(basketGO);
+        }
 
-        if (basketList.Count == 0) GameUI.Restart();
+        if (basketList.Count == 0)
+        {
+            appleTree.enabled = false;
+            Time.timeScale = 0;
+            gameUI.GameOver();
+        }
     }
 }

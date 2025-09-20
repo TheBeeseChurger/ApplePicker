@@ -7,6 +7,7 @@ public class AppleTree : MonoBehaviour
 {
     [Header("Inscribed")]
     public GameObject applePrefab;
+    public GameObject branchPrefab;
     public GameUI rounds;
 
     public float speed = 1f;
@@ -24,7 +25,8 @@ public class AppleTree : MonoBehaviour
 
     void DropItem()
     {
-        GameObject apple = Instantiate<GameObject>(applePrefab);
+        GameObject prefab = Random.value < 0.1f ? branchPrefab : applePrefab;
+        GameObject apple = Instantiate<GameObject>(prefab);
         apple.transform.position = transform.position;
         TryToDrop();
     }
@@ -37,7 +39,7 @@ public class AppleTree : MonoBehaviour
         }
         else
         {
-            Invoke(nameof(TryToDrop), 5f);
+            Invoke(nameof(TryToDrop), 1f);
             speed *= 1.2f;
             itemDropDelay *= 0.8f;
         }

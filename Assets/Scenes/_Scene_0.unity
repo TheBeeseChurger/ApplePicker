@@ -313,6 +313,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   basketPrefab: {fileID: 2542602672419900636, guid: 72af0e9a0fc624d448112c4e1bfa0a43, type: 3}
+  appleTree: {fileID: 1133735145}
+  gameUI: {fileID: 1028888148}
   numBaskets: 4
   basketBottomY: -14
   basketSpacingY: 2
@@ -326,6 +328,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1332dc2d89474f0d9c57ce8ff0efca45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1133735145 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1848347814, guid: 8f0034f363d5fc643a9dea629909574f, type: 3}
+  m_PrefabInstance: {fileID: 5051134027010188712}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4495ed53d5d6dc84885eaf7f739f718f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1218494711
@@ -405,6 +418,10 @@ PrefabInstance:
       propertyPath: rounds
       value: 
       objectReference: {fileID: 1028888148}
+    - target: {fileID: 1848347814, guid: 8f0034f363d5fc643a9dea629909574f, type: 3}
+      propertyPath: branchPrefab
+      value: 
+      objectReference: {fileID: 7986344141915960416, guid: 3ee0f9fedba340f43a319424cb4745ed, type: 3}
     - target: {fileID: 5051134027784726797, guid: 8f0034f363d5fc643a9dea629909574f, type: 3}
       propertyPath: m_Name
       value: AppleTree
@@ -462,6 +479,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 986009075168900665, guid: 3f9da13040cf08446b865c2401d5c7b4, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 986009075168900665, guid: 3f9da13040cf08446b865c2401d5c7b4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 986009075168900665, guid: 3f9da13040cf08446b865c2401d5c7b4, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 986009075168900665, guid: 3f9da13040cf08446b865c2401d5c7b4, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 986009075168900665, guid: 3f9da13040cf08446b865c2401d5c7b4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -402
+      objectReference: {fileID: 0}
+    - target: {fileID: 986009075168900665, guid: 3f9da13040cf08446b865c2401d5c7b4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -255
+      objectReference: {fileID: 0}
+    - target: {fileID: 2885112846054294374, guid: 3f9da13040cf08446b865c2401d5c7b4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8242972449681122874, guid: 3f9da13040cf08446b865c2401d5c7b4, type: 3}
       propertyPath: m_Pivot.x
       value: 0

@@ -10,38 +10,40 @@ namespace DefaultNamespace
     {
         public Text roundText;
         public int roundItemIncrease = 15;
+        public GameObject restartUI;
         
         private int round = 0;
         private int itemsUntilNextRound;
+        
+        private bool gameRunning = true;
 
         private void Awake()
         {
+            restartUI.SetActive(false);
             CheckIfCanDrop();
         }
 
         public bool CheckIfCanDrop()
         {
+            // First / Next Round
             if (itemsUntilNextRound <= 0)
             {
                 round++;
-                if (round > 4)
-                {
-                    // Win
-                }
-                else
-                {
-                    // First / Next Round
-                    roundText.text = "Round " + round;
-                    itemsUntilNextRound = round * roundItemIncrease;
-                }
+                roundText.text = "Round " + round;
+                itemsUntilNextRound = round * roundItemIncrease;
                 return false;
             }
 
             itemsUntilNextRound--;
             return true;
         }
+        
+        public void GameOver() 
+        {
+            restartUI.SetActive(true);
+        }
 
-        public static void Restart()
+        public void Restart()
         {
             SceneManager.LoadScene(1);
         }

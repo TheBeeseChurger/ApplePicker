@@ -30,10 +30,22 @@ public class Basket : MonoBehaviour
         GameObject collidedWith = collision.gameObject;
         if (collidedWith.CompareTag("Apple"))
         {
+            Apple apple = collidedWith.GetComponent<Apple>();
+            if (apple)
+            {
+                if (apple.isBranch)
+                {
+                    ApplePicker apScript = Camera.main.GetComponent<ApplePicker>();
+                    apScript.AppleMissed();
+                }
+                else
+                {
+                    scoreCounter.score += 100;
+                    HighScore.TRY_SET_HIGH_SCORE(scoreCounter.score);
+                }
+            }
+            
             Destroy(collidedWith);
-
-            scoreCounter.score += 100;
-            HighScore.TRY_SET_HIGH_SCORE(scoreCounter.score);
         }
     }
 }

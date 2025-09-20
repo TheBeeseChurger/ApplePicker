@@ -5,6 +5,7 @@ using UnityEngine;
 public class Apple : MonoBehaviour
 {
     public static float bottomY = -20f;
+    public bool isBranch; // supposed to not catch branches
 
     void Update()
     {
@@ -12,8 +13,11 @@ public class Apple : MonoBehaviour
         {
             Destroy(this.gameObject);
 
-            ApplePicker apScript = Camera.main.GetComponent<ApplePicker>();
-            apScript.AppleMissed();
+            if (!isBranch)
+            {
+                ApplePicker apScript = Camera.main.GetComponent<ApplePicker>();
+                apScript.AppleMissed();
+            }
         }
     }
 }
