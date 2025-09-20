@@ -1,3 +1,4 @@
+using DefaultNamespace;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,7 @@ public class AppleTree : MonoBehaviour
 {
     [Header("Inscribed")]
     public GameObject applePrefab;
+    public GameUI rounds;
 
     public float speed = 1f;
 
@@ -13,18 +15,32 @@ public class AppleTree : MonoBehaviour
 
     public float changeDirChange = 0.1f;
 
-    public float appleDropDelay = 1f;
+    public float itemDropDelay = 1f;
     
     void Start()
     {
-        Invoke("DropApple", 2f);
+        TryToDrop();
     }
 
-    void DropApple()
+    void DropItem()
     {
         GameObject apple = Instantiate<GameObject>(applePrefab);
         apple.transform.position = transform.position;
-        Invoke("DropApple", appleDropDelay);
+        TryToDrop();
+    }
+
+    private void TryToDrop()
+    {
+        if (rounds.CheckIfCanDrop())
+        {
+            Invoke(nameof(DropItem), itemDropDelay);
+        }
+        else
+        {
+            Invoke(nameof(TryToDrop), 5f);
+            speed *= 1.2f;
+            itemDropDelay *= 0.8f;
+        }
     }
 
     void Update()

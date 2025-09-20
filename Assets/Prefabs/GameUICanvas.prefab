@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1794623621813643684}
   - component: {fileID: 251304930140736267}
   - component: {fileID: 419913822980946802}
+  - component: {fileID: 5867595761951543323}
   m_Layer: 5
   m_Name: HighScore
   m_TagString: Untagged
@@ -79,6 +80,19 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 'High Score: 1,000'
+--- !u!114 &5867595761951543323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629941046214402276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a5789f55304ea64b966ca3430db6f75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resetHighScoreNow: 0
 --- !u!1 &2648275864121281764
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,6 +264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bab2d0b2476adf45a15f16957dfebef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: 0
 --- !u!1 &2885112846054294374
 GameObject:
   m_ObjectHideFlags: 0

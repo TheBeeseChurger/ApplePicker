@@ -9,15 +9,19 @@ namespace DefaultNamespace
     public class GameUI : MonoBehaviour
     {
         public Text roundText;
-        public int roundLength = 15;
+        public int roundItemIncrease = 15;
         
         private int round = 0;
-        private float timeUntilNextRound = 0;
-        
-        private void FixedUpdate()
+        private int itemsUntilNextRound;
+
+        private void Awake()
         {
-            timeUntilNextRound -= Time.fixedDeltaTime;
-            if (timeUntilNextRound <= 0)
+            CheckIfCanDrop();
+        }
+
+        public bool CheckIfCanDrop()
+        {
+            if (itemsUntilNextRound <= 0)
             {
                 round++;
                 if (round > 4)
@@ -27,13 +31,17 @@ namespace DefaultNamespace
                 else
                 {
                     // First / Next Round
-                    roundText.text = "Round "+round;
-                    timeUntilNextRound = roundLength;
+                    roundText.text = "Round " + round;
+                    itemsUntilNextRound = round * roundItemIncrease;
                 }
+                return false;
             }
+
+            itemsUntilNextRound--;
+            return true;
         }
 
-        public void Restart()
+        public static void Restart()
         {
             SceneManager.LoadScene(1);
         }
